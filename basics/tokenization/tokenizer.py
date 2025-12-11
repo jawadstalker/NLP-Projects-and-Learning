@@ -20,23 +20,22 @@
 #     print(simple_tokenize(sample_text))
 
 
-#week 1 - train  1
+
+#
+
+
+#week 1 - train 2 chatgpt answer 
 import re
 
 def simple_tokenize(text):
     text = text.lower()
-    text = re.sub(r'[^\w\s]', "", text)
-    new_list = text.split()
-    stopwords = ["the", "is", "in", "of", "and", "to"]
+    text = re.sub(r"[^\w\s]", "", text)
     
-    i = 0
-    while i < len(new_list):
-        if new_list[i] in stopwords:
-            new_list.pop(i)  # Use pop to remove the element at index i
-        else:
-            i += 1  # Only increment if no removal occurs
+    stopwords = {"the", "is", "in", "of", "and", "to", "a"}  # set سرعت بالاتر
+    tokens = text.split()
     
-    return new_list
+    filtered = [t for t in tokens if t not in stopwords]
+    return filtered
 
 if __name__ == "__main__":
     sample_text = "this is a test text"
