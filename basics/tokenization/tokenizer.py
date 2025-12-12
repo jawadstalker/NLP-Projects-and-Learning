@@ -51,8 +51,8 @@ def tokenize_and_stem(text):
     tokens = [t for t in tokens if t not in stopwords]
 
     # Stem
-    stemmer = PorterStemmer()
-    stems = [stemmer.stem(t) for t in tokens]
+    
+    stems = [PorterStemmer().stem(t) for t in tokens]
 
     return stems
 
