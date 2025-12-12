@@ -20,10 +20,6 @@
 #     print(simple_tokenize(sample_text))
 
 
-
-#
-
-
 #week 1 - train 2 chatgpt answer 
 import re
 
@@ -31,7 +27,7 @@ def simple_tokenize(text):
     text = text.lower()
     text = re.sub(r"[^\w\s]", "", text)
     
-    stopwords = {"the", "is", "in", "of", "and", "to", "a"}  # set سرعت بالاتر
+    stopwords = {"the", "is", "in", "of", "and", "to", "a"}  
     tokens = text.split()
     
     filtered = [t for t in tokens if t not in stopwords]
